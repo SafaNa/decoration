@@ -20,8 +20,8 @@ export default function MobileHeader() {
             </div>
 
             {/* Bottom Row: Search Bar */}
-            <div className="px-4 pb-3">
-                <div className="w-full h-10 bg-slate-100 dark:bg-white/10 rounded-xl flex items-center px-3 gap-2 transition-colors focus-within:bg-white focus-within:ring-2 focus-within:ring-primary/20 dark:focus-within:bg-white/10">
+            <div className="px-4 pb-2">
+                <div className="w-full h-9 bg-slate-100 dark:bg-white/10 rounded-xl flex items-center px-3 gap-2 transition-colors focus-within:bg-white focus-within:ring-2 focus-within:ring-primary/20 dark:focus-within:bg-white/10">
                     <span className="material-symbols-outlined text-slate-400 text-[18px]">search</span>
                     <input
                         type="text"

@@ -4,7 +4,7 @@ import ImageWithFallback from './ImageWithFallback';
 
 export default function Hero({ settings = {}, heroImage }) {
     // Default fallback values if settings are not loaded yet
-    const badgeText = settings.hero_badge || "PREMIUM GRADUATION GIFTS";
+    const badgeText = settings.hero_badge || "Premium Gifts";
     const titleLine1 = settings.hero_title_line1 || "Celebrate Their";
     const titleLine2 = settings.hero_title_line2 || "Milestone";
     const subtitle = settings.hero_subtitle || "Discover handcrafted treasures designed to honor their journey and inspire their future.";
@@ -120,7 +120,7 @@ export default function Hero({ settings = {}, heroImage }) {
                         transition={{ duration: 1, delay: 0.2 }}
                         className="relative z-10"
                     >
-                        <div className="w-full h-[300px] md:h-[600px] rounded-2xl md:rounded-[2rem] shadow-xl md:shadow-2xl overflow-hidden">
+                        <div className="w-full h-[240px] md:h-[600px] rounded-2xl md:rounded-[2rem] shadow-xl md:shadow-2xl overflow-hidden">
                             <ImageWithFallback
                                 src={heroImage || "https://images.unsplash.com/photo-1549465220-1e8b5fec634d?auto=format&fit=crop&q=80&w=800"}
                                 alt="Premium Gift"
