@@ -66,6 +66,10 @@ export default function Sidebar({ isOpen, setIsOpen }) {
                         <span className="material-symbols-outlined">dashboard</span>
                         <span className="text-sm">Dashboard</span>
                     </Link>
+                    <Link className={getLinkClass('/admin/banners')} to="/admin/banners">
+                        <span className="material-symbols-outlined">view_carousel</span>
+                        <span className="text-sm">Banner Website</span>
+                    </Link>
                     <Link className={getLinkClass('/admin/categories')} to="/admin/categories">
                         <span className="material-symbols-outlined">category</span>
                         <span className="text-sm">Kategori Produk</span>
@@ -81,10 +85,6 @@ export default function Sidebar({ isOpen, setIsOpen }) {
                     <Link className={getLinkClass('/admin/gallery')} to="/admin/gallery">
                         <span className="material-symbols-outlined">collections</span>
                         <span className="text-sm">Galeri</span>
-                    </Link>
-                    <Link className={getLinkClass('/admin/banners')} to="/admin/banners">
-                        <span className="material-symbols-outlined">view_carousel</span>
-                        <span className="text-sm">Banners</span>
                     </Link>
                     <Link className={getLinkClass('/admin/testimonials')} to="/admin/testimonials">
                         <span className="material-symbols-outlined">rate_review</span>
