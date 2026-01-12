@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: var(--color-primary);
+  --color-primary-dark: var(--color-primary-dark);
+  --color-background-light: var(--bg-light);
+  --color-background-dark: var(--bg-dark);
+  --color-surface-light: var(--color-surface-light);
+  --color-surface-dark: var(--color-surface-dark);
+  --color-text-main: var(--color-text-main);
+  --color-text-secondary: var(--color-text-secondary);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-heading: var(--font-heading);
+
+  --radius-card: var(--radius-card);
+}
+
+/* Theme: Minimalist (Default) - Standard/Clean */
+:root {
+  --color-primary: #1a1a1a;
+  --color-primary-dark: #000000;
+  --bg-light: #ffffff;
+  --bg-dark: #1a1a1a;
+  --color-surface-light: #f8fafc;
+  --color-surface-dark: #334155;
+  --color-text-main: #0f172a;
+  --color-text-secondary: #475569;
+
+  --font-display: "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-heading: "Inter", sans-serif;
+
+  --radius-card: 0.5rem;
+
+  /* Promo Banner Gradients */
+  --promo-from: #0f172a;
+  --promo-to: #334155;
+}
+
+/* Theme: Pastel (Pink/Soft) - Matches User HTML Colors */
+[data-theme='pastel'] {
+  --color-primary: #ed78b3;
+  --color-primary-dark: #d65d9a;
+  --bg-light: #f8f6f7;
+  --bg-dark: #211119;
+  --color-surface-light: #ffffff;
+  --color-surface-dark: #2d1b24;
+  --color-text-main: #1b0e14;
+  --color-text-secondary: #964f73;
+
+  --font-display: "Poppins", sans-serif;
+  --font-heading: "Playfair Display", serif;
+
+  --radius-card: 1rem;
+
+  /* Promo Banner Gradients */
+  --promo-from: #ed78b3;
+  --promo-to: #fbcfe8;
+  /* Note: Pastels usually light, but for white text need contrast. 
+     Let's use a darker pink/rose gradient for the banner background */
+  --promo-from: #db2777;
+  /* Pink 600 */
+  --promo-to: #f472b6;
+  /* Pink 400 */
+}
+
+/* Theme: Elegant (Luxury/Dark) - Pink & Slate */
+[data-theme='elegant'] {
+  --color-primary: #ed78b3;
+  /* Pink */
+  --color-primary-dark: #d65d9a;
+  /* Pink Dark */
+
+  --bg-light: #f8f6f7;
+  --bg-dark: #0f172a;
+  /* Slate 900 */
+
+  --font-display: "Manrope", sans-serif;
+  --font-body: "Manrope", sans-serif;
+
+  --radius-card: 0.5rem;
+
+  /* Promo Banner Gradients */
+  --promo-from: #1a1a1a;
+  /* Almost Black */
+  --promo-to: #4a044e;
+  /* Deep Purple/Black */
+}
+
+/* Elegant Theme Special Classes */
+[data-theme='elegant'] .glass-nav {
+  background: rgba(0, 0, 0, 0.8) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(237, 120, 179, 0.15);
+}
+
+[data-theme='elegant'] .glass-card {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(237, 120, 179, 0.2);
+}
+
+/* Custom Utilities similar to what was in the script tag logic if needed,
+   but Tailwind v4 should handle most via theme variables. */
+/* Global Cursor Pointer Enforcement */
+button,
+[type='button'],
+[type='reset'],
+[type='submit'],
+[role='button'],
+a {
+  cursor: pointer !important;
+}
