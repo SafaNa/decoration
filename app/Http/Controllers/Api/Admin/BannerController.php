@@ -36,7 +36,7 @@ class BannerController extends Controller
 
         if ($request->hasFile('image')) {
             $path = $request->file('image')->store('banners', 'public');
-            $validated['image'] = Storage::url($path);
+            $validated['image'] = $path; // Store relative path
         }
 
         $banner = Banner::create($validated);
@@ -70,13 +70,15 @@ class BannerController extends Controller
 
         if ($request->hasFile('image')) {
             // Delete old image if exists
-            if ($banner->image) {
-                $oldPath = str_replace('/storage/', '', $banner->image);
+            $oldImage = $banner->getRawOriginal('image');
+            if ($oldImage) {
+                // Handle both legacy full URLs and new relative paths
+                $oldPath = str_replace('/storage/', '', parse_url($oldImage, PHP_URL_PATH) ?? $oldImage);
                 Storage::disk('public')->delete($oldPath);
             }
 
             $path = $request->file('image')->store('banners', 'public');
-            $validated['image'] = Storage::url($path);
+            $validated['image'] = $path; // Store relative path
         }
 
         $banner->update($validated);
@@ -89,8 +91,10 @@ class BannerController extends Controller
      */
     public function destroy(Banner $banner)
     {
-        if ($banner->image) {
-            $oldPath = str_replace('/storage/', '', $banner->image);
+        $image = $banner->getRawOriginal('image');
+        if ($image) {
+            // Handle both legacy full URLs and new relative paths
+            $oldPath = str_replace('/storage/', '', parse_url($image, PHP_URL_PATH) ?? $image);
             Storage::disk('public')->delete($oldPath);
         }
 
